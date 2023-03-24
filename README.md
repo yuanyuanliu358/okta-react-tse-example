@@ -1,4 +1,4 @@
-# Basic CRUD App with Node + React
+# thoughtspot demo with Okta and Trusted Auth
 
 This example app shows how to create a Node.js API and display its data with a React UI. To follow along step-by-step, [check out the blog post](https://developer.okta.com/blog/2018/07/10/build-a-basic-crud-app-with-node-and-react).
 
@@ -13,7 +13,7 @@ To install this example application, run the following commands:
 ```bash
 git clone https://github.com/oktadeveloper/okta-react-node-example.git
 cd okta-react-node-example
-yarn
+npm
 ```
 
 This will get a copy of the project install locally. You will need to set up some environment variables before the app will run properly.

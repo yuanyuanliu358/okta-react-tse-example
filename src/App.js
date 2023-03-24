@@ -9,6 +9,25 @@ import {
 import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 import PostsManager from './pages/PostsManager';
+import { init, AuthType, LiveboardEmbed, EmbedEvent } from '@thoughtspot/visual-embed-sdk';
+
+
+init({
+    thoughtSpotHost: "https://10.87.89.86",
+    authType: AuthType.TrustedAuthToken,
+    username: "tsadmin",
+    getAuthToken: () => {
+  return fetch(`https://localhost:3030/api/gettoken/tsadmin`)
+      .then(response => response.json())
+      .then(json => json.token);
+    },
+    disableLoginRedirect: true,
+    autoLogin: true,
+    //callPrefetch: true
+});
+
+
+
 
 const styles = theme => ({
   main: {

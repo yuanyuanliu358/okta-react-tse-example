@@ -5,6 +5,13 @@ import { Security } from '@okta/okta-react';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {prefetch, PrefetchFeatures} from '@thoughtspot/visual-embed-sdk';
+
+prefetch
+   ({
+      url: "https://10.87.89.86",
+      prefetchFeatures: [PrefetchFeatures.LiveboardEmbed,PrefetchFeatures.VizEmbed]
+   });
 
 const oktaConfig = {
   issuer: `${process.env.REACT_APP_OKTA_ORG_URL}/oauth2/default`,
