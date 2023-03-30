@@ -22,35 +22,23 @@ import ErrorSnackbar from '../components/ErrorSnackbar';
 
 import { init, AuthType, LiveboardEmbed, EmbedEvent } from '@thoughtspot/visual-embed-sdk';
 
-const styles = theme => ({
-});
+export const PostsManager = () => {
+	React.useEffect(() => {
+		const liveboardEmbed = new LiveboardEmbed('#embed', {
+        frameParams: {
+            width: '100%',
+            height: '100%',
+        },
+        fullHeight: true,
+        liveboardId: '3f9c48f5-c465-4785-abd5-38459e1f5d6d',
+        //visibleActions: [Action.Save,Action.ShowUnderlyingData,Action.DownloadAsPDF]
+    });
+    liveboardEmbed.render();
+	}, []);
+	return (<div>
+	  <Typography variant="h4">Liveboards</Typography>
+	  <div id="embed"></div>
+  	</div>)
+};
 
-// const liveboardEmbed = new LiveboardEmbed('#embed', {
-//         frameParams: {
-//             width: '100%',
-//             height: '100%',
-//         },
-//         fullHeight: true,
-//         liveboardId: '0ee6fb0f-e7bf-4042-8d5d-c90d0412bf6c',
-//         //visibleActions: [Action.Save,Action.ShowUnderlyingData,Action.DownloadAsPDF]
-//     });
-//     liveboardEmbed.render();
-
-class PostsManager extends Component {
-
-  render() {
-
-    return (
-      <Fragment>
-        <Typography variant="h4">Live Board</Typography>
-
-      </Fragment>
-    );
-  }
-}
-
-export default compose(
-  withOktaAuth,
-  withRouter,
-  withStyles(styles),
-)(PostsManager);
+export default PostsManager;

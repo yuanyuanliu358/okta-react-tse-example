@@ -13,16 +13,16 @@ import { init, AuthType, LiveboardEmbed, EmbedEvent } from '@thoughtspot/visual-
 
 
 init({
-    thoughtSpotHost: "https://10.87.89.86",
+    thoughtSpotHost: "https://embed-1-do-not-delete.thoughtspotdev.cloud",
     authType: AuthType.TrustedAuthToken,
-    username: "tsadmin",
+    username: "yuanyuan.liu",
     getAuthToken: () => {
-  return fetch(`https://localhost:3030/api/gettoken/tsadmin`)
-      .then(response => response.json())
-      .then(json => json.token);
+  return fetch(`http://localhost:3001/api/gettoken/yuanyuan.liu`)
+  // go to trusted auth server
+      .then(response => response.text());
     },
     disableLoginRedirect: true,
-    autoLogin: true,
+    autoLogin: false,
     //callPrefetch: true
 });
 
