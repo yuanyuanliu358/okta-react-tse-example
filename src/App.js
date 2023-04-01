@@ -10,6 +10,7 @@ import AppHeader from './components/AppHeader';
 import Home from './pages/Home';
 import PostsManager from './pages/PostsManager';
 import { init, AuthType, LiveboardEmbed, EmbedEvent } from '@thoughtspot/visual-embed-sdk';
+import PostsList from './pages/PostsList';
 
 
 init({
@@ -44,7 +45,8 @@ const App = ({ classes }) => (
     <AppHeader />
     <main className={classes.main}>
       <Route exact path="/" component={Home} />
-      <SecureRoute path="/posts" component={PostsManager} />
+      <SecureRoute path="/posts" component={PostsList} />
+      <SecureRoute path="/post/:pinboardId" component={PostsManager} />
       <Route path="/login/callback" component={LoginCallback} />
     </main>
   </Fragment>
