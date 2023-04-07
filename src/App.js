@@ -12,13 +12,15 @@ import PostsManager from './pages/PostsManager';
 import { init, AuthType, LiveboardEmbed, EmbedEvent } from '@thoughtspot/visual-embed-sdk';
 import PostsList from './pages/PostsList';
 
+window.TS_HOST =
+  process.env.TS_HOST || `https://embed-1-do-not-delete.thoughtspotdev.cloud`;
 
 init({
-    thoughtSpotHost: "https://embed-1-do-not-delete.thoughtspotdev.cloud",
+    thoughtSpotHost: window.TS_HOST,
     authType: AuthType.TrustedAuthToken,
     username: "yuanyuan.liu",
     getAuthToken: () => {
-  return fetch(`http://localhost:3001/api/gettoken/yuanyuan.liu`)
+  return fetch(`http://localhost:3030/api/gettoken/yuanyuan.liu`)
   // go to trusted auth server
       .then(response => response.text());
     },
