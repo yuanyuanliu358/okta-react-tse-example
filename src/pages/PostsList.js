@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-function PostsList() {
+function PostsList({userName}) {
   const [pinboards, setPinboards] = useState([]);
 
   useEffect(() => {
+    if (userName) {
     fetch("https://embed-1-do-not-delete.thoughtspotdev.cloud/api/rest/2.0/metadata/search", {
       headers: {
         "content-type": "application/json",
@@ -19,7 +20,8 @@ function PostsList() {
           setPinboards(pinboardList);
         }
       });
-  }, []);
+    }
+  }, [userName]);
 
   return (
     <div>

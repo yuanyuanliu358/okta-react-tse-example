@@ -22,10 +22,10 @@ import ErrorSnackbar from '../components/ErrorSnackbar';
 
 import { init, AuthType, LiveboardEmbed, EmbedEvent, RuntimeFilterOp } from '@thoughtspot/visual-embed-sdk';
 
-export const PostsManager = () => {
+export const PostsManager = ({userName}) => {
   let { pinboardId } = useParams();
 	React.useEffect(() => {
-    if (pinboardId) {
+    if (pinboardId && userName) {
       const liveboardEmbed = new LiveboardEmbed('#embed', {
           frameParams: {
               width: '100%',
@@ -42,7 +42,7 @@ export const PostsManager = () => {
       });
       liveboardEmbed.render();
     }
-	}, [pinboardId]);
+	}, [pinboardId, userName]);
 	return (<div>
 	  <Typography variant="h4">Liveboards</Typography>
 	  <div id="embed"></div>
