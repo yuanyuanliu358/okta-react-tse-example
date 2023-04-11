@@ -14,8 +14,10 @@ function PostsList() {
     })
       .then((res) => res.json())
       .then((data) => {
-        const pinboardList = data.map(el => ({id:el.metadata_id,name:el.metadata_name}))
-        setPinboards(pinboardList);
+        if (data instanceof Array) {
+          const pinboardList = (data || []).map(el => ({id:el.metadata_id,name:el.metadata_name}))
+          setPinboards(pinboardList);
+        }
       });
   }, []);
 

@@ -13,7 +13,7 @@ prefetch(
 
 const oktaConfig = {
   issuer: `${process.env.REACT_APP_OKTA_ORG_URL}/oauth2/default`,
-  redirect_uri: `${process.env.URL}/login/callback`,
+  redirect_uri: `${window.location.origin}/login/callback`,
   client_id: process.env.REACT_APP_OKTA_CLIENT_ID,
 };
 
