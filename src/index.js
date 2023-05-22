@@ -2,9 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { Security } from '@okta/okta-react';
-
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import {prefetch, PrefetchFeatures} from '@thoughtspot/visual-embed-sdk';
+
+prefetch(
+  window.TS_HOST,
+  [PrefetchFeatures.LiveboardEmbed,PrefetchFeatures.VizEmbed]
+);
 
 const oktaConfig = {
   issuer: `${process.env.REACT_APP_OKTA_ORG_URL}/oauth2/default`,

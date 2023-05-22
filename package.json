@@ -10,9 +10,9 @@
     "body-parser": "1.19.0",
     "cors": "2.8.5",
     "dotenv": "8.2.0",
-    "finale-rest": "1.0.6",
     "express": "4.17.1",
     "final-form": "^4.8.3",
+    "finale-rest": "1.0.6",
     "lodash": "^4.17.19",
     "moment": "^2.22.2",
     "react": "^16.10.2",
@@ -26,7 +26,7 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "start": "npm-run-all --parallel watch:server start:web",
+    "start": "npm-run-all --parallel start:server start:web",
     "start:web": "react-scripts start",
     "start:server": "node src/server",
     "watch:server": "nodemon --watch src/server src/server",
